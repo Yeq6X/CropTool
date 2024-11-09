@@ -1,0 +1,18 @@
+{
+    "hotkeys": {
+        "next_image": "<space>",
+        "previous_image": "<Shift-space>",
+        "save_image": "<Control-s>",
+        "ignore_image": "<Control-b>",
+        "corner_mode": "<KeyPress-r>",
+        "center_mode": "<KeyPress-e>",
+        "lasso_tool": "<KeyPress-e>",
+        "color_pick_keys": "<KeyPress-s>"
+    },
+    "background_color": "#ffffff",
+    "min_image_size": 400,
+    "window_size": {
+        "width": 1379,
+        "height": 959
+    }
+}
