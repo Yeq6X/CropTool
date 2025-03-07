@@ -53,7 +53,8 @@ class MainViewModel:
             self.main_view.log('Please select an input folder first.')
             return
         # 名前順に読み込む
-        image_files = sorted([f for f in os.listdir(self.input_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif'))])
+        image_files = sorted([f for f in os.listdir(self.input_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif', '.webp'))])
+        print(image_files)
         self.progress_model.sync_with_files(image_files) # 進捗をファイルリストと同期または新規作成
         self.main_view.log('Progress synced with input folder.')
         self.open_image_view()

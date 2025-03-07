@@ -12,6 +12,15 @@ class ImageView(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
+        # ホットキーコマンドの説明用のラベル
+        hotkey_text = """
+利用可能なホットキー:
+Space: 次の画像へ | Shift + Space: 前の画像へ | Ctrl + S: 画像を保存 | Ctrl + B: 画像をスキップ
+R: 四隅選択モード | E: 中心点選択モード | S: 色選択モード
+"""
+        self.hotkey_description = tk.Label(self, text=hotkey_text, fg="green", justify=tk.LEFT)
+        self.hotkey_description.pack(pady=5)
+
         self.info_label = tk.Label(self, text='')
         self.info_label.pack(pady=5)
         
@@ -24,7 +33,6 @@ class ImageView(tk.Frame):
         self.canvas.bind('<ButtonRelease-1>', self.viewmodel.on_left_release)
         self.canvas.bind('<Button-3>', self.viewmodel.pick_color_event)
         self.canvas.bind('<Motion>', self.viewmodel.on_mouse_move)
-
 
     def display_image(self, image):
         self.image_tk = ImageTk.PhotoImage(image)

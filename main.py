@@ -5,7 +5,7 @@ from viewmodels.main_viewmodel import MainViewModel
 
 def main():
     root = tk.Tk()
-    root.title("LoRA Image Processing Tool")
+    root.title("Image Crop Tool")
     app = MainViewModel(root)
     root.mainloop()
 

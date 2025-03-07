@@ -37,5 +37,5 @@ class SettingsModel:
     def save_settings(self, settings=None):
         if settings:
             self.settings = settings
-        print(f"Saving settings to {self.settings_file}")
+        # print(f"Saving settings to {self.settings_file}")
         write_json(self.settings_file, self.settings)
