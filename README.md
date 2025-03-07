@@ -80,7 +80,7 @@
 
 ### progress.jsonの仕様
 このファイルには以下の情報が記録されます：
-```json
+```js
 {
     "画像ファイル名": {
         "status": "処理状態",  // "completed", "incomplete", "ignored"
