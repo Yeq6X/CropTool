@@ -4,7 +4,7 @@
 このツールは、画像処理のためのシンプルなアプリケーションです。画像を選択し、クロップやカラー背景の適用などの処理を行うことができます。
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/9d73a06b-08ff-433f-bf2c-e1f550acdc49" width="700">
+  <img src="https://github.com/user-attachments/assets/43dae6d5-39eb-4b58-a8bb-405088e281bc" width="700">
 </div>
 
 ## 主な機能
