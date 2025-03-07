@@ -2,7 +2,10 @@
 
 ## 概要
 このツールは、画像処理のためのシンプルなアプリケーションです。画像を選択し、クロップやカラー背景の適用などの処理を行うことができます。
-<img src="https://github.com/user-attachments/assets/9d73a06b-08ff-433f-bf2c-e1f550acdc49" width="500">
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9d73a06b-08ff-433f-bf2c-e1f550acdc49" width="700">
+</div>
 
 ## 主な機能
 - 画像の閲覧・ナビゲーション
