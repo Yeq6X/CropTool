@@ -8,10 +8,10 @@
         "center_mode": "<KeyPress-e>",
         "color_pick_keys": "<KeyPress-s>"
     },
-    "background_color": "#ffffff",
+    "background_color": "#ccc8bc",
     "min_image_size": 300,
     "window_size": {
-        "width": 1208,
-        "height": 809
+        "width": 1047,
+        "height": 722
     }
 }
