@@ -43,20 +43,20 @@ class MainViewModel:
             create_folder_if_not_exists(self.output_folder)
             progress_file = os.path.join(self.output_folder, 'progress.json')
             self.progress_model = ProgressModel(progress_file, self.input_folder, self.output_folder)
-            self.main_view.log(f'Input folder selected: {self.input_folder}')
-            self.main_view.log(f'Output folder: {self.output_folder}')
+            self.main_view.log(f'入力フォルダ: {self.input_folder}')
+            self.main_view.log(f'出力フォルダ: {self.output_folder}')
         else:
-            self.main_view.log('No folder selected.')
+            self.main_view.log('入力フォルダを選択してください。')
 
     def start_loading(self):
         if not self.input_folder:
-            self.main_view.log('Please select an input folder first.')
+            self.main_view.log('先に入力フォルダを選択してください。')
             return
         # 名前順に読み込む
         image_files = sorted([f for f in os.listdir(self.input_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif', '.webp'))])
         print(image_files)
         self.progress_model.sync_with_files(image_files) # 進捗をファイルリストと同期または新規作成
-        self.main_view.log('Progress synced with input folder.')
+        self.main_view.log('入力フォルダと進捗が同期しました。')
         self.open_image_view()
 
     def open_image_view(self):

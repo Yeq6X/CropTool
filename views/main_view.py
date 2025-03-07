@@ -20,13 +20,13 @@ class MainView(tk.Frame):
         self.hotkey_description = tk.Label(self, text=get_hotkey_text(self.viewmodel.settings_model), fg="green", justify=tk.LEFT)
         self.hotkey_description.pack(pady=5)
 
-        self.select_input_button = tk.Button(self, text='Select Input Folder', command=self.viewmodel.select_input_folder)
+        self.select_input_button = tk.Button(self, text='入力フォルダを選択', command=self.viewmodel.select_input_folder)
         self.select_input_button.pack(pady=5)
         # ボタンにマウスオーバーイベントを追加
         self.select_input_button.bind("<Enter>", lambda e: self.show_description("入力フォルダを選択します。画像処理を行うためのソース画像が含まれるフォルダを指定してください。"))
         self.select_input_button.bind("<Leave>", lambda e: self.clear_description())
 
-        self.start_loading_button = tk.Button(self, text='Start Loading', command=self.viewmodel.start_loading)
+        self.start_loading_button = tk.Button(self, text='読み込み開始', command=self.viewmodel.start_loading)
         self.start_loading_button.pack(pady=5)
         # ボタンにマウスオーバーイベントを追加
         self.start_loading_button.bind("<Enter>", lambda e: self.show_description("選択したフォルダから画像の読み込みを開始します。処理には時間がかかる場合があります。"))

@@ -20,7 +20,7 @@ class ImageView(tk.Frame):
         self.info_label = tk.Label(self, text='')
         self.info_label.pack(pady=5)
         
-        self.log_label = tk.Label(self, text='here is log')
+        self.log_label = tk.Label(self, text='')
         self.log_label.pack(pady=5)
 
         self.canvas = Canvas(self)

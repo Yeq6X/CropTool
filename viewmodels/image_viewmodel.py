@@ -164,9 +164,9 @@ class ImageViewModel:
         all_files = self.progress_model.get_file_count() - self.progress_model.get_discarded_file_count()
         completed_files = self.progress_model.get_completed_file_count()
         # ファイル名のみ表示
-        info = [f"File: {os.path.basename(self.image_model.file_path)}",
-                f"Status: {self.progress_model.progress_list[self.image_list[self.current_index]]['status']}",
-                f"Progress: {completed_files}/{all_files}"]
+        info = [f"ファイル名: {os.path.basename(self.image_model.file_path)}",
+                f"ステータス: {self.progress_model.progress_list[self.image_list[self.current_index]]['status']}",
+                f"進捗: {completed_files}/{all_files}"]
         info_text = ' | '.join(info)
         self.image_view.update_info(info_text)
 
@@ -179,10 +179,11 @@ class ImageViewModel:
             save_image(cropped_image, output_path)
             self.image_model.increment_crop_count()
             self.progress_model.update_status(os.path.basename(self.image_model.file_path), 'completed')
-            self.image_view.update_log(f"Image saved: {output_path}")
+            self.image_view.update_log(f"画像を保存しました: {output_path}")
             self.crop_rectangle = None  # 保存後に矩形をリセット
         else:
             winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)
+            self.image_view.update_log("画像のサイズが小さすぎます。最小サイズは" + str(self.settings_model.settings['min_image_size']) + "pxです。settings.jsonのmin_image_sizeを変更してください。")
 
     def ignore_image(self):
         """画像を無視として進捗を更新"""
