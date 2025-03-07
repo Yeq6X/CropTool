@@ -2,7 +2,9 @@
 from PIL import Image, ImageDraw
 
 def open_image(file_path):
-    return Image.open(file_path)
+    # RGBモードで画像を開く
+    image = Image.open(file_path).convert('RGB')
+    return image
 
 def save_image(image, file_path):
     image.save(file_path)

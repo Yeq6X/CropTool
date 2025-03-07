@@ -12,6 +12,7 @@ class MainViewModel:
     def __init__(self, master):
         self.master = master
         self.settings_model = SettingsModel('data/settings.json')
+        print(self.settings_model.settings)
         self.progress_model = None
         
         # 設定からウィンドウサイズを読み込んで設定

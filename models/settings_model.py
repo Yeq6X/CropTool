@@ -10,14 +10,16 @@ class SettingsModel:
 
     def load_settings(self):
         if os.path.exists(self.settings_file):
+            print(f"Loading settings from {self.settings_file}")
             return read_json(self.settings_file)
         else:
+            print(f"Settings file not found: {self.settings_file}")
             default_settings = {
                 'hotkeys': {
                     'next_image': '<space>',
                     'previous_image': '<Shift-space>',
                     'save_image': '<Control-s>',
-                    'ignore_image': '<Control-d>',
+                    'ignore_image': '<Control-b>',
                     "corner_mode": "<KeyPress-r>",
                     "center_mode": "<KeyPress-e>",
                     'color_pick_keys': '<KeyPress-s>'
@@ -35,4 +37,5 @@ class SettingsModel:
     def save_settings(self, settings=None):
         if settings:
             self.settings = settings
+        print(f"Saving settings to {self.settings_file}")
         write_json(self.settings_file, self.settings)
