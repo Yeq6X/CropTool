@@ -2,6 +2,7 @@
 
 import tkinter as tk
 from tkinter import filedialog
+from utils.hotkey_utils import get_hotkey_text
 
 class MainView(tk.Frame):
     def __init__(self, master, viewmodel):
@@ -16,17 +17,7 @@ class MainView(tk.Frame):
         self.command_description.pack(pady=5)
 
         # ホットキーコマンドの説明用のラベル
-        hotkey_text = """
-利用可能なホットキー:
-Space: 次の画像へ
-Shift + Space: 前の画像へ
-Ctrl + S: 画像を保存
-Ctrl + B: 画像をスキップ
-R: 四隅選択モード
-E: 中心点選択モード
-S: 色選択モード
-"""
-        self.hotkey_description = tk.Label(self, text=hotkey_text, fg="green", justify=tk.LEFT)
+        self.hotkey_description = tk.Label(self, text=get_hotkey_text(self.viewmodel.settings_model), fg="green", justify=tk.LEFT)
         self.hotkey_description.pack(pady=5)
 
         self.select_input_button = tk.Button(self, text='Select Input Folder', command=self.viewmodel.select_input_folder)
@@ -57,4 +48,4 @@ S: 色選択モード
         
     def clear_description(self):
         """コマンドの説明をクリア"""
-        self.command_description.config(text="コマンドの説明がここに表示されます")
+        self.command_description.config(text="")
